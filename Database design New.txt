@@ -1,0 +1,80 @@
+MyCommerce:
+Pages needed >
+-Home: home.blade.php > index.html > created
+-Contact: contact.blade.php > contact.html > created
+-Register-Login: login.blade.php > customer-register.html 
+-Category full width: category.blade.php > shop-category-full.html
+-Product details: productdetails.blade.php > shop-detail.html
+-Shopping Cart: cart.blade.php > shop-basket.html
+-Check Out Step 1-4: 
+
+
+bit.ly/jc_be
+
+https://github.com/purwadhika-git/ft06.git
+
+command : php artisan make:model ProductImage -m
+command : php artisan make:auth
+
+DB Design :
+
+product:
+    - name (string)
+    - price (decimal)
+    - size (string)
+    - tags (string)
+    - description (string)
+
+category:
+    - category_name (string)
+
+product_category:
+    - category_id (FK)
+    - product_id (FK)
+
+product_image:
+    - product_id (FK)
+    - image
+
+user: (blm dicreate)
+    - name
+    - email
+    - password
+    - dob
+    - pob
+    - phone_number
+
+user_address:
+    - user_id (FK)
+    - nama_penerima
+    - no_hp_penerima
+    - alamat
+    - kota
+    - provinsi
+    - kode_pos
+    - default
+
+order:
+    - code
+    - user_id (FK) (nullable)
+    - order_date
+    - delivery_option
+    - total
+
+order_info:
+    - order_id (FK)
+    - email
+    - nama_penerima    
+    - no_hp_penerima
+    - alamat
+    - kota
+    - provinsi  
+    - kode_pos
+    - default
+    
+order_details:
+    - order_id (FK)
+    - product_id (FK)
+    - qty
+    - price    
+    // kalau ada promo masuk di order detail juga
